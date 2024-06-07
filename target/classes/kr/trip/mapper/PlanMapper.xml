@@ -10,7 +10,7 @@ SELECT * FROM content WHERE areaname = #{areaname}
 <insert id="insertTravelContent">
 INSERT INTO travelContent (plan_id, content_id, day, time) VALUES(#{plan_id}, #{content_id}, #{day}, #{time})
 </insert>
-<select id="getContentListOfPlanByPlanId" resultType="kr.trip.domain.AllOfPlanDTO">
+<select id="getContentListOfPlanByPlanId" parameterType="int" resultType="kr.trip.domain.AllOfPlanDTO">
     SELECT tp.plan_id, tp.regdate, tp.go, tp.end, tp.dayCnt, tp.tpa_id,tp.member_email,
            tc.content_id, tc.day AS tc_day, tc.time AS tc_time,
            c.ContentType, c.addr2, c.image1
@@ -20,7 +20,7 @@ INSERT INTO travelContent (plan_id, content_id, day, time) VALUES(#{plan_id}, #{
     WHERE tp.plan_id = #{plan_id}
 </select>
 
-<select id="getContentListOfPlanByEmail" resultType="kr.trip.domain.AllOfPlanDTO">
+<select id="getContentListOfPlanByEmail" parameterType="string" resultType="kr.trip.domain.AllOfPlanDTO">
     SELECT tp.plan_id, tp.regdate, tp.go, tp.end, tp.dayCnt, tp.tpa_id,tp.member_email,
            tc.content_id, tc.day AS tc_day, tc.time AS tc_time,
            c.ContentType, c.addr2, c.image1

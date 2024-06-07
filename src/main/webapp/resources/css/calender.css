@@ -185,35 +185,42 @@ td {
 /* 선택된 시작 셀 */
 .calendar__day.sel--start {
   position: relative;
-  color: white;
+  color: red;
 }
 
 .calendar__day.sel--start:after {
-  content: '';
+  content: '출발';
   display: block;
   position: absolute;
   background: var(--selectedColor);
-  width: 20px;
+  width: 64px;
   height: var(--height);
   top: 0;
   right: 0;
+  z-index:-1;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
 }
 
 /* 선택된 끝 셀 */
 .calendar__day.sel--end {
   position: relative;
+  color:black;
+  
 }
 
 .calendar__day.sel--end:before {
-  content: '';
+  content: '도착';
   display: block;
   position: absolute;
   background: var(--selectedColor);
-  width: 30px;
+  width: 64px;
   height: var(--height);
   top: 0;
   left: 0;
   z-index: -1;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
 }
 
 /* 선택된 캘린더 셀의 내부 날짜 */

@@ -25,6 +25,7 @@ public class MemberVO implements UserDetails{
    private String phone;
    private List<AuthVO> authList;
    private Date member_regdate;
+   private String image;
    
    @Override
    public Collection<? extends GrantedAuthority> getAuthorities() {

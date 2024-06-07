@@ -1,30 +1,42 @@
 *, *:before, *:after { box-sizing: border-box; }
-#modal-area-name{
-	font-size:35px;
-	font-weight:bold;
+#planSubmit {
+    border-radius: 5px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    width: 145px;
+    font-size: 15px;
+    height: 50px;
+}
+#modal-area-name {
+    font-size: 38px;
+    font-weight: bold;
+    color: black;
 }
 
-#modal-area-explain{
-	width:250px;
-	height:400px;
+#modal-area-explain {
+    width: 340px;
+    height: 400px;
+    color: black;
+    font-weight: lighter;
+    font-size: 14px;
 }
 
-#modalimage{
-	position:relative;
-	top:-240px;
-	left:470px;
-	width:400px;
-	height:380px;
-	
-	
+#modalimage {
+    position: absolute;
+    top: 60px;
+    left: 550px;
+    width: 450px;
+    height: 380px;
 }
 
 .modal-container {
   margin: 80px auto;
   padding-top: 0px;
   position: relative;
-  width: 160px;    
-  .modal-btn {
+  width: 160px;
+}    
+  .modal-btn{
     display: block;
     margin: 0 auto;      
     color: #fff;  
@@ -116,6 +128,4 @@
       visibility: visible;      
       box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);  
       @media (max-width: 400px) { left: 0; }                   
-    }  
-  }
-}
+    }

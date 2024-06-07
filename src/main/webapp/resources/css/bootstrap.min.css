@@ -5524,6 +5524,7 @@ textarea.form-control-lg {
   z-index: 1050;
   width: 100vw;
   height: 100vh;
+  background-color:transparent;
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -11260,6 +11261,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+  
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

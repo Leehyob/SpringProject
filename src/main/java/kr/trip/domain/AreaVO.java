@@ -1,10 +1,8 @@
 package kr.trip.domain;
 
 import lombok.Data;
-import lombok.ToString;
 
 @Data
-@ToString
 public class AreaVO {
 	private String areaname;
 	
@@ -16,8 +14,14 @@ public class AreaVO {
 	
 	private String voltage;
 	
+	private String timediff;
+	
+	private String cat1_id;
+	
 	private String lat;
 	
 	private String lng;
+	
+	
 
 }

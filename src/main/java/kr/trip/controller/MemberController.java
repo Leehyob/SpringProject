@@ -1,5 +1,6 @@
 package kr.trip.controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Random;
 
@@ -10,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,11 +22,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.trip.domain.AuthVO;
 import kr.trip.domain.MemberVO;
-import kr.trip.security.CustomUserDetailsService;
+import kr.trip.domain.TravelPlanVO;
 import kr.trip.service.KakaoLoginService;
 import kr.trip.service.MemberService;
 import kr.trip.service.certifiedPhoneNumber;
@@ -47,20 +48,6 @@ public class MemberController {
 	public String main() {
 		return "/main";
 	}
-	
-	@GetMapping("/member/agree")
-	public void agree() {
-		
-	}
-	
-	
-	
-	@GetMapping("/member/register")
-	public void join() {
-		
-	}
-	
-	
 	
 	@PostMapping("/member/register")
 	@Transactional
@@ -287,6 +274,42 @@ log.info("전달 받은 이메일 주소 : " + email);
 		
 		return "redirect:/customLogin";
 	}
+	@GetMapping("member/mypage")
+	   public String myPagePlan(Model model) {
+	      
+	      Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	       String member_email = authentication.getName();
+	      
+	       
+	       List<TravelPlanVO> tpvo = memberService.viewPlan(member_email);
+	       List<MemberVO> member = memberService.viewMember(member_email);
+
+	       model.addAttribute("tpvo", tpvo);
+	       model.addAttribute("member", member);
+	       
+	       return "member/mypage";
+	   }
+	   
+	   //수정창 프로필이미지----------------------
+	   @GetMapping("/member/membermodify")
+	   public String memberModify(Model model) {
+	       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	          String member_email = authentication.getName();
+	          List<MemberVO> member = memberService.viewMember(member_email);
+	          model.addAttribute("member", member);
+
+	          return "member/membermodify";
+	   }
+	   //프로필이미지저장
+	   @PostMapping("/profile")
+	   public String uploadprofileImage(@RequestParam("file") MultipartFile file, Principal principal,Model model) {
+	       
+	      System.out.println("들어오냐=============================");
+	      String member_email = principal.getName();
+	      memberService.saveProfileImage(member_email, file);
+	      
+	      return "redirect:/member/mypage";
+	   }
 	
 	
 }

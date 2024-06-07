@@ -71,7 +71,6 @@
                     <!-- modal -->
                     <div class="modal-container">
   <input id="modal-toggle" type="checkbox">
-  <label class="modal-btn" for="modal-toggle">Click me</label> 
   <label class="modal-backdrop" for="modal-toggle"></label>
   <div class="modal-content">
     <label class="modal-close" for="modal-toggle">&#x2715;</label>
@@ -79,13 +78,12 @@
     <p id="modal-area-explain"></p>
        <form action="/plan/place" method="get">
        <input type="hidden" name="areaname">
-       <button type="submit">일정 만들기</button>
+       <button type="submit" id="planSubmit">일정 만들기</button>
        </form>
        <img id="modalimage" src="" alt="">
   </div>          
 </div>  
 <!-- modalEnd -->
-
                  <!-- /.row -->
                 <div class="row">
                     <div class="portfolio-item col-md-3 col-sm-7">
@@ -241,81 +239,11 @@
             </div> <!-- /.container -->
         </div> <!-- /#portfolio -->
         
-        <!--         <div class="content-section" id="services">
-            <div class="container">
-                <div class="row">
-                    <div class="heading-section col-md-12 text-center">
-                        <h2>Our Services</h2>
-                        <p>We design mobile-first websites for you</p>
-                    </div> /.heading-section
-                </div> /.row
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item" id="service-1">
-                            <div class="service-icon">
-                                <i class="fa fa-file-code-o"></i>
-                            </div> /.service-icon
-                            <div class="service-content">
-                                <div class="inner-service">
-                                   <h3>HTML5 Coding</h3>
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.</p> 
-                                </div>
-                            </div> /.service-content
-                        </div> /#service-1
-                    </div> /.col-md-3
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item" id="service-2">
-                            <div class="service-icon">
-                                <i class="fa fa-paper-plane-o"></i>
-                            </div> /.service-icon
-                            <div class="service-content">
-                                <div class="inner-service">
-                                   <h3>Our Support</h3>
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.</p> 
-                                </div>
-                            </div> /.service-content
-                        </div> /#service-1
-                    </div> /.col-md-3
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item" id="service-3">
-                            <div class="service-icon">
-                                <i class="fa fa-institution"></i>
-                            </div> /.service-icon
-                            <div class="service-content">
-                                <div class="inner-service">
-                                   <h3>Our Design</h3>
-                                   <p>We make HTML CSS templates that are responsive for any screen size on any device. Feel free to download and use our templates without restrictions.</p> 
-                                </div>
-                            </div> /.service-content
-                        </div> /#service-1
-                    </div> /.col-md-3
-                    <div class="col-md-3 col-sm-6">
-                        <div class="service-item" id="service-4">
-                            <div class="service-icon">
-                                <i class="fa fa-flask"></i>
-                            </div> /.service-icon
-                            <div class="service-content">
-                                <div class="inner-service">
-                                   <h3>Go for mobile</h3>
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, assumenda, eveniet, consectetur, ex doloribus veniam asperiores incidunt mollitia placeat aniet.</p> 
-                                </div>
-                            </div> /.service-content
-                        </div> /#service-1
-                    </div> /.col-md-3
-                </div> /.row
-            </div> /.container
-        </div> /#services -->
-
-
-
-
-
-            
         <div id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-xs-12 text-left">
-                        <span>Copyright &copy; 2014 Company Name</span>
+                        <span>Copyright &copy; 2024 Company Name</span>
                   </div> <!-- /.text-center -->
                     <div class="col-md-4 hidden-xs text-right">
                         <a href="#top" id="go-top">Back to top</a>
@@ -334,74 +262,6 @@
         <script src="/resources/js/main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script>
-        $(document).ready(function(){
-        	
-        	$(".portfolio-thumb").on("click", function(){
-        		console.log("테스트입니다")
-        		var areaname = $(this).find("img").attr("alt");
-        		
-        		console.log(areaname);
-        		
-        		planService.getArea(areaname, function(data){
-        	          $("#modal-area-name").text("대한민국 " + areaname);
-        	          $("#modal-area-explain").text(data.aexplain);
-
-        	          var imageUrl = "/resources/images/gallery/" + areaname + ".jpg";
-        	          var altText = areaname;
-        	          $("#modalimage").attr("src", imageUrl);
-        	          $("#modalimage").attr("alt", altText);
-        	          $("input[name='areaname']").val(altText);
-        	          // 모달 열기
-        	          $("#modal-toggle").prop("checked", true);
-        				console.log(data)
-        				})
-        				
-        		
-        	})
-        	
-        	$("#makePlan").on("click", function(){
-        		var areaname = $(this).val();
-        		console.log(areaname)
-        	});
-        	
-        });
         
-        var planService = (function(){
-        	
-        	function getArea(areaname, callback){
-        		
-        		console.log("areaname"+areaname);
-        		
-        		$.ajax({
-        		  type:"get",
-        		  url:"/plan/getArea/" + areaname,
-        		  
-        		  success: function(data, status, xhr){
-        			if(callback){
-        				callback(data)
-        			}  
-        		  },
-        		  
-        		  error:function(xhr,status, er){
-        			  if(error){
-        				  error(er)
-        			  }
-        		  }
-        		  
-        		
-        			
-        		})
-        		
-        	}//end getArea
-        	return{
-        		getArea:getArea
-        	}
-        })();
-        </script>
-        
- 
-  
-        <!-- templatemo 406 flex -->
     </body>
 </html>

@@ -1,3 +1,67 @@
+$(document).ready(function(){
+        	
+        	$(".portfolio-thumb").on("click", function(){
+        		console.log("테스트입니다")
+        		var areaname = $(this).find("img").attr("alt");
+        		
+        		console.log(areaname);
+        		
+        		planService.getArea(areaname, function(data){
+        	          $("#modal-area-name").text("대한민국 " + areaname);
+        	          $("#modal-area-explain").text(data.aexplain);
+
+        	          var imageUrl = "/resources/images/gallery/" + areaname + ".jpg";
+        	          var altText = areaname;
+        	          $("#modalimage").attr("src", imageUrl);
+        	          $("#modalimage").attr("alt", altText);
+        	          $("input[name='areaname']").val(altText);
+        	          // 모달 열기
+        	          $("#modal-toggle").prop("checked", true);
+        				console.log(data)
+        				})
+        				
+        		
+        	})
+        	
+        	$("#makePlan").on("click", function(){
+        		var areaname = $(this).val();
+        		console.log(areaname)
+        	});
+        	
+        });
+        
+        var planService = (function(){
+        	
+        	function getArea(areaname, callback){
+        		
+        		console.log("areaname"+areaname);
+        		
+        		$.ajax({
+        		  type:"get",
+        		  url:"/plan/getArea/" + areaname,
+        		  
+        		  success: function(data, status, xhr){
+        			if(callback){
+        				callback(data)
+        			}  
+        		  },
+        		  
+        		  error:function(xhr,status, er){
+        			  if(error){
+        				  error(er)
+        			  }
+        		  }
+        		  
+        		
+        			
+        		})
+        		
+        	}//end getArea
+        	return{
+        		getArea:getArea
+        	}
+        })();
+
 jQuery(document).ready(function($) {
 
 	'use strict';

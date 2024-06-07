@@ -5,7 +5,10 @@ import java.util.List;
 
 import kr.trip.domain.AllOfPlanDTO;
 import kr.trip.domain.AreaVO;
+import kr.trip.domain.ChoicePlaceDTO;
 import kr.trip.domain.ContentVO;
+import kr.trip.domain.DateBetweenDTO;
+import kr.trip.domain.SleepNameDTO;
 import kr.trip.domain.TravelContentVO;
 import kr.trip.domain.TravelPlanVO;
 
@@ -38,5 +41,9 @@ public interface PlanService {
 	public void insert(ContentVO content);
 	
 	public void insertContentIntoPlan(List<TravelContentVO> tc, TravelPlanVO tp) throws ParseException;
+	
+	public List<DateBetweenDTO> autoSplit(DateBetweenDTO day);
+	public List<ChoicePlaceDTO> autoSplit2(ChoicePlaceDTO contentName);
+	public List<SleepNameDTO> autoSplit3(SleepNameDTO sleep);
 	
 }

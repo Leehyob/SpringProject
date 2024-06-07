@@ -3,6 +3,7 @@ package kr.trip.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Service;
 
 import kr.trip.domain.AllOfPlanDTO;
 import kr.trip.domain.AreaVO;
+import kr.trip.domain.ChoicePlaceDTO;
 import kr.trip.domain.ContentVO;
+import kr.trip.domain.DateBetweenDTO;
+import kr.trip.domain.SleepNameDTO;
 import kr.trip.domain.TravelContentVO;
 import kr.trip.domain.TravelPlanVO;
 import kr.trip.mapper.PlanMapper;
@@ -131,6 +135,71 @@ public class PlanServiceImpl implements PlanService{
 		for(TravelContentVO vo : tcList) {
 			mapper.insertContentIntoPlan(vo);
 		}
+	}
+
+
+
+	@Override
+	public List<DateBetweenDTO> autoSplit(DateBetweenDTO day) {
+String[] daysArray = day.getDay().split(",");
+		
+		String[] dayOfWeekArray = day.getDayOfWeek().split(",");
+		
+		String []startTimeArray = day.getStartTime().split(",");
+		
+		String[]endTimeArray = day.getEndTime().split(",");
+		
+		log.info(daysArray[1]);
+		List<DateBetweenDTO>db = new ArrayList<>();
+		for(int i = 0; i < daysArray.length; i++) {
+			DateBetweenDTO dto = new DateBetweenDTO();
+			dto.setDay(daysArray[i]);
+			dto.setDayOfWeek(dayOfWeekArray[i]);
+			dto.setStartTime(startTimeArray[i]);
+			dto.setEndTime(endTimeArray[i]);
+			
+			db.add(dto);
+		}
+		return db;
+	}
+
+	@Override
+	public List<ChoicePlaceDTO> autoSplit2(ChoicePlaceDTO contentName) {
+String[]contentNameArray = contentName.getContentName().split(",");
+		
+		String[]contentTypesArray = contentName.getContentTypes().split(",");
+		
+		String[]address = contentName.getAddress().split(",");
+		
+		String[]playTime = contentName.getPlayTime().split(",");
+		
+		List<ChoicePlaceDTO>cp = new ArrayList<ChoicePlaceDTO>();
+		for(int i =0; i < contentNameArray.length; i++) {
+			ChoicePlaceDTO dto = new ChoicePlaceDTO();
+			dto.setContentName(contentNameArray[i]);
+			dto.setContentTypes(contentTypesArray[i]);
+			dto.setAddress(address[i]);
+			dto.setPlayTime(playTime[i]);
+			
+			cp.add(dto);
+		}
+		return cp;
+	}
+
+	@Override
+	public List<SleepNameDTO> autoSplit3(SleepNameDTO sleep) {
+	String[]sleepNameArray = sleep.getSleepName().split(",");
+		
+		List<SleepNameDTO>sn = new ArrayList<SleepNameDTO>();
+		for(int i = 0; i < sleepNameArray.length; i++) {
+			SleepNameDTO dto = new SleepNameDTO();
+			
+			dto.setSleepName(sleepNameArray[i]);
+			
+			sn.add(dto);
+		}
+		log.info(sn);
+		return sn;
 	}
 	
 }

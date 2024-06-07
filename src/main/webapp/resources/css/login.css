@@ -139,6 +139,7 @@ flex: auto;
     height: 55px; /* 자동으로 높이를 조정하여 원래 가로 세로 비율을 유지합니다. */
     margin-top:10px;
     margin-left: 108px;
+    margin-bottom:10px;
   }
   .inline {
   display: inline;
@@ -179,7 +180,5 @@ flex: auto;
 .checkboxDiv label {width:90%; text-align:left;}
 
 .checkboxDiv input {
-  width:15px; height:15px;
-  display: inline-block;
-  float: left;
+  width:13px; height:13px;
 }

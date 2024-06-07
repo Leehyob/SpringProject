@@ -1,0 +1,124 @@
+#place, #place2{
+    display:none;}
+    
+    #place {position:relative; padding-right:10px;}
+    
+    #place2 {position:absolute; right:-89%; top:0; z-index:10; height:100%; border-left:1px solid #ddd;}
+    
+    #sleep{position:relative; padding-right:10px;}
+    
+    #sleep2{position:absolute; right:-89%; top:0; z-index:10; height:100%; border-left:1px solid #ddd;}
+    
+    #sleep, #sleep2{
+    display:none;}
+    
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+/*       input[type="text"] {
+    width: 100px; 원하는 너비 값으로 조정
+}
+
+높이 조정
+input[type="text"] {
+    height: 30px; 원하는 높이 값으로 조정
+} */
+
+#timeSet > li {
+display:inline-block;}
+
+.set{
+display:inline-block;}
+
+.timeSetter{
+display:inline-block;}
+
+ul ,li , ins {
+    text-decoration: none; /* 밑줄 제거 */
+    list-style-type: none;
+    /* 다른 스타일 적용 */
+}
+ul , li{
+width:80px;
+}
+li{
+display:inline-block;}
+
+#day{width:500px;}
+
+#timeInput{
+width:115px;
+}
+input[name=date_day]{
+	border:none;
+	readonly:readonly;
+	width:60px;
+	 outline: none;
+	 font-weight:bold;
+}
+
+input[name=date_week]{
+	border:none;
+	readonly:readonly;
+	width:28px;
+	 outline: none;
+}
+
+input[name=startTime]{
+	border:none;
+}
+
+input[name=endTime]{
+	border:none;
+}
+.dateAll{
+	width:100%;
+	table-layout: fixed; /* 테이블 레이아웃을 고정 */
+	text-align:center;
+}
+
+.dateAll th{
+	text-align:center;
+}
+.dateAll th.dateColumn{
+	width:55px;
+}
+.dateAll th.dayColumn{
+	width:40px;
+
+	}
+
+.dateAll th.startTimeColumn {
+            width: 80px; /* 시작시간 컬럼 너비 조절 */
+}
+.dateAll th.endTimeColumn {
+            width: 80px; /* 종료시간 컬럼 너비 조절 */
+   }
+
+.dateALL td.date2{
+}   
+   
+.dateAll td.date4{
+	width:90px;
+}
+
+.dateAll td.date3{
+	width:30px;
+	 word-wrap: break-word; /* 단어를 줄바꿈 */
+}
+
+.dateAll td.date5{
+width:90px;	
+}
+	

@@ -20,15 +20,6 @@
       <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 
       <style>
-        #place,
-        #place2 {
-          display: none;
-        }
-
-        #sleep,
-        #sleep2 {
-          display: none;
-        }
 
         .bd-placeholder-img {
           font-size: 1.125rem;
@@ -81,7 +72,7 @@
         </a> 메뉴바 1번째 칸~-->
             </li>
             <li class="dayBtn">
-              	<input type="hidden" name="dayCnt" value="3">
+                 <input type="hidden" name="dayCnt" value="${index }">
               <!-- <a href="#" class="nav-link py-3 border-bottom" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi" width="24" height="24" role="img" aria-label="Dashboard"><use xlink:href="#speedometer2"/></svg>
         </a> 메뉴바 2번째 칸-->
@@ -105,24 +96,16 @@
           </ul>
         </div>
 
-        <!-- 장소 선택 --><!-- 장소 선택 --><!-- 장소 선택 --><!-- 장소 선택 --><!-- 장소 선택 --><!-- 장소 선택 -->
-        <div id="place">
+          <c:forEach items="${date}" var="day" varStatus="loop">
+        <div id="place${loop.index }">
           <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white" style="width: 380px;">
-            <span class="fs-5 fw-semibold">${plan.areaname}</span>
-            <input type="text" name="go" value="${plan.go}" readonly="readonly">
-            ~
-            <input type="text" name="go" value="${plan.end}" readonly="readonly"><br>
+            <span class="fs-5 fw-semibold">${areaname}</span>
+            ${loop.index + 1}일차
+            ${day.day }  (${day.dayOfWeek })
+
+
             <div class="info">
-            	<c:if test="${plan.day == plan.go}">
-            		<div id="traffic">
-            			<p>${plan.endTime - plan.startTime}</p><br>
-            			명소
-            			<b>지역 도착!</b>
-            		</div>
-            	</c:if>
-            	<c:if test="${plan.day == plan.end}">
-            		
-            	</c:if>
+          
             </div>
             <div class="pac-card" id="pac-controls">
             </div>
@@ -133,22 +116,27 @@
               <span id="place-address"></span>
             </div>
             <div class="list-group list-group-flush border-bottom scrollarea">
+            
+            <c:forEach items="${choice }" var="place" begin="${loop.index  * 3}" end="${(loop.index + 1) * 3}">
+            
+            ${place.contentName }<br>
+            ${place.contentTypes }<br>
+            ${place.address }<br>
+            ${place.playTime }<br>
+            이동시간 <input type="number" value="20">분
+            </c:forEach>
+            <c:forEach items="${sleep }" var="">
+            
+            </c:forEach>
             </div>
           </div>
         </div>
-        <div id="place2" class="flex-shrink-0 p-3 bg-white" style="width: 350px;">
-          <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-            <svg class="bi me-2" width="30" height="24" style="margin-top:15px;">
-              <use xlink:href="#bootstrap" />
-            </svg>
-            <span class="fs-5 fw-semibold" style="margin-top:5px; padding-top:10px;">여행지 선택</span>
-          </a>
-          <div class="chooseContent" style="border:1px;">
-          </div>
-        </div>
+        </c:forEach>
 
         <!-- 장소 선택End --><!-- 장소 선택End --><!-- 장소 선택End --><!-- 장소 선택End --><!-- 장소 선택End --><!-- 장소 선택End -->
-
+      <input type="text" name="date" value="${date}">
+      <input type="text" name="place" value="${place}">
+      <input type="text" name="sleep" value="${sleep}">
       </main>
 
 
@@ -158,168 +146,128 @@
       <script src="../resources/js/sidebars.js"></script>
     </body>
     <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        for (var i = 3; i < 20; i++) {
+            $("#place" + i).css("display", "none");
+        }
+        console.log("페이지 로드");
+    });
+    function getCoordinates(){
+       var params = new URLSearchParams(window.location.search);
+       var coordinates = [];
+       var index = 1;
+       
+       while (params.has('lat${index}') && params.has('lng${index}')){
+          var lat = parseFloat(params.get('lat${index}'));
+          var lng = parseFloat(params.get('lng${index}'));
+          coordinates.push({lat : lat, lng : lng});
+          index++
+       }
+       return coordinates;
+    }
+    
+    
       function myMap() {
+         var coordinates = getCoordinates();
+         if(coordinates.length === 0){
+            console.log('No coordinates found');
+            return;
+         }
         const myLatLng = { lat: 35.8473612313022, lng: 129.218053667485 };
 
-        var marker;
-        var label;
-        var flightPath;
         
         var map = new google.maps.Map(document.getElementById("googleMap"), {
           zoom: 14,
           center: myLatLng
         });
 
-        var geocoder = new google.maps.Geocoder();
-
-        console.log('지도 진입');
-
-        document.body.addEventListener('click', function (event) {
-          if (event.target && event.target.matches('.checkBtn')) {
-            console.log('버튼 클릭 이벤트 실행');
-            var addr2Input = event.target.previousElementSibling;
-            console.log('이건 됨?')
-            if (addr2Input) {
-              var address = addr2Input.value;
-              console.log('입력된 주소:', address);
-              geocodeAddress(geocoder, map, address);
-            }
-          }
-
-          if (event.target && event.target.matches(".deleteBtn")) {
-            console.log("삭제 버튼 동작");
-            var index = parseInt(event.target.getAttribute('data-index'), 10);
-            deleteMarker(index);
-          }
-
-        });
-
-        const labels = "123456789";
-        let labelIndex = 0;
-        var markers = [];
-
-        function geocodeAddress(geocoder, resultMap, address) {
-          console.log('지오코딩 함수 실행');
-
-          geocoder.geocode({ 'address': address }, function (result, status) {
-            console.log('지오코딩 결과:', result);
-            console.log('지오코딩 상태:', status);
-
-            if (status === 'OK') {
-              resultMap.setCenter(result[0].geometry.location);
-              resultMap.setZoom(18);
-              var image = {
-                url: "../resources/image/주석_2024-05-21_153140-removebg-preview.png", // 아이콘 이미지 경로
-                scaledSize: new google.maps.Size(55, 55), // 아이콘 크기 설정 (가로, 세로)
-
-              }
-
-              marker = new google.maps.Marker({
-                map: resultMap,
-                position: result[0].geometry.location,
-                icon: image,
+      coordinates.forEach((coord, index) => {
+         new google.maps.Marker({
+             position: coord,
+                map: map,
                 label: {
-                  text: (markers.length+1).toString(),
+                  text: (index + 1).toString(),
                   fontSize: "30px",
                   fontWeight: "bold",
                   color: '#ffffff',
                   labelOrigin: new google.maps.Point(30, 30)
                 }
-              });
+         })
+      })
+       
+      
+      var flightPath = new google.maps.Polyline({
+         path : coordinates,
+         geodesic : true,
+         strokeColor : "#FF0000",
+         strokeOpacity : 1.0,
+         strokeWeight : 2
+      })
 
-              markers.push(marker);
+      flightPath.setMap(map);
 
-              console.log('위도:', marker.position.lat());
-              console.log('경도:', marker.position.lng());
-
-              updatePolyline();
-
-            } else {
-              alert('지오코드가 다음의 이유로 성공하지 못했습니다: ' + status);
-            }
-          });
-        }
-
-
-
-        function updatePolyline() {
-          console.log("update")
-          var path = markers.map(marker => marker.getPosition());
-
-          console.log("path 값 : ", markers);
-
-          if (flightPath) {
-              flightPath.setMap(null);
-            }
-          
-          flightPath = new google.maps.Polyline({
-            path: path,
-            geodesic: true,
-            strokeColor: "#FF0000",
-            strokeOpacity: 1.0,
-            strokeWeight: 2
-          });
-
-          flightPath.setMap(map);
-        }
-
-        function deleteMarker(index) {
-          if (markers[index]) {
-            markers[index].setMap(null);
-            markers.splice(index, 1);
-            relabelMarkers();
-            updatePolyline();
-          }
-        }
-
-        function relabelMarkers(){
-        	markers.forEach((marker, i) => {
-        		marker.setLabel({
-        			text:(i+1).toString(),
-        			fontSize: "30px",
-        	        fontWeight: "bold",
-        	        color: '#ffffff',
-        	        labelOrigin: new google.maps.Point(30, 30)
-        		})
-        	})
-        }
       }
 
       document.addEventListener('DOMContentLoaded', myMap);
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-nI2V_bsNjQF5ZQ4mlq8o8sr1oZ6bLi0&libraries=places&callback=myMap"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-    	  
-    	  udateBtn();
-    	  
-    	 function updateBtn(){
- 			var dayCnt = $("input[name='dayCnt']").val();
- 			console.log(dayCnt);
- 				var str = "";
- 			for(var i=1; i<= dayCnt; i++){
- 				str += "<button class='day'>"
- 				str += i+"일차"
- 				str += "</button><br>"
- 				console.log(i);
- 				
- 			}
- 				$(".dayBtn").html(str);
- 				$(".day").on("click",function(){
- 					var day = $(this).text();
- 					var date = 
- 					console.log(day);
- 					
- 					var str2 ="";
- 						str2 += "<h2>"+day+"</h2>"
- 						str2 += "<br><p>" + info + "</p>"
- 						$(".seeInfo").html(str2);
- 				})
- 		}
-      }
+    	  var dayCnt = $("input[name='dayCnt']").val();
+         updateBtn();
+         
+        function updateBtn(){
+          
+          console.log(dayCnt);
+             var str = "";
+          for(var i=0; i< dayCnt; i++){
+             str += "<button class='day"+i+"' id='"+ i +"'>"
+             str += (i+1) +"일차"
+             str += "</button><br>"
+             console.log(i);
+             
+          }
+             $(".dayBtn").html(str);
+             $(".day").on("click",function(){
+                var day = $(this).text();
+                var date = 
+                console.log(day);
+                
+                var str2 ="";
+                   str2 += "<h2>"+day+"</h2>"
+                   str2 += "<br><p>" + info + "</p>"
+                   $(".seeInfo").html(str2);
+             })
+       }
+        
+        for(var i = 0; i<dayCnt; i++){
+        	(function (index) {
+        $(".day" + i).on("click", function(){
+        
+        	var clickedId = $(this).attr('id');
+        
+        	console.log(clickedId)
+        	for(var j = 0; j < dayCnt; j++){
+        		if(j === index){
+        			console.log("트루문성공")
+        			$("#place" + j).css("display", "block");
+        		}else{
+        		$("#place" + j).css("display", "none");
+        	}
+        	}	
+        	
+        })
+        
+      })(i);
+        }
+        
+      })
 
 
 
 </script>    
+
+
 </html>

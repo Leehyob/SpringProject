@@ -1,6 +1,5 @@
 package kr.trip.domain;
 
-import java.sql.Time;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -34,7 +33,6 @@ public class ContentVO {
 	private String contentType;
 	private Date created_time;
 	private Long likeNum;
-	private Time time;
 	private byte[] image1;
 
 

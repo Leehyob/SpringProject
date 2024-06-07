@@ -51,4 +51,5 @@ http://www.templatemo.com/tm-406-flex
                         </div> <!-- /#menu-wrapper -->                        
                 </div> <!-- /.main-header -->
             </div> <!-- /.site-header -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>        
     
