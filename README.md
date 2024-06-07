@@ -1,1 +1,1 @@
-# SpringProject
+# 여행 플랜 작성 웹 사이트
