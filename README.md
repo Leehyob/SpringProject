@@ -11,7 +11,7 @@
   
 - [실행 화면](https://github.com/Leehyob/SpringProject.git/#-실행-화면)
   
-- [개선 사항](https://github.com/Leehyob/SpringProject.git/#-개선 사항)
+- [개선 사항](https://github.com/Leehyob/SpringProject.git/#-개선-사항)
   
 ## 개요
 - 프로젝트 목표 : 
