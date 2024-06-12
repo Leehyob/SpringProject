@@ -26,8 +26,8 @@
   
 ## 기술 스택
 - API : '네이버 API', '구글 맵 API', '포트 원 API', 'coolSMS', '카카오 로그인 API'
-- Language : 'JAVA(11)','JavaScript(1.5)'
-- Library & Framework : `Spring(5.2.7)`, `Spring Security(5.2.7)`, 'Junit(4.12)', 'Servlet(3.1.0)'
+- Language : `JAVA(11)`,`JavaScript(1.5)`
+- Library & Framework : `Spring(5.2.7)`, `Spring Security(5.2.7)`, `Junit(4.12)`, `Servlet(3.1.0)`
 - Database : `MySQL(8.0.36)`
 - Target :  'Web Browser'
 - Tool : 'SpringSource Tool Suite (STS) 3.9.18.RELEASE'
