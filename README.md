@@ -1,5 +1,5 @@
 <h1 align="center"><b>스프링 여행 플랜 작성 웹 사이트</b></h1>
-
+<img src="https://github.com/Leehyob/SpringProject/assets/157094625/cb71c84d-691a-44c6-ad14-49d0eb3dcd3e">
 ## 목차
 - [개요](https://github.com/Leehyob/SpringProject.git/#-개요)
   
