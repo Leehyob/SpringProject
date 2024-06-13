@@ -35,8 +35,23 @@
   <br>
   
 ## 프로젝트 설계, 기술 구현
-[여행플랜ppt .pdf](https://github.com/user-attachments/files/15812596/ppt.pdf)
-
+![슬라이드1](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드2](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드3](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드4](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드5](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드6](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드7](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드8](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드9](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드10](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드11](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드12](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드13](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드14](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드15](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드16](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드17](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드18](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드19](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드20](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드 21](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드22](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드23](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드24](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드25](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드26](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드27](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드28](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드29](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드30](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드 31](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  ![슬라이드32](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)
+![슬라이드 33](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6)  
 ## 핵심 기능
 ## 실행 화면
 ## 개선 사항
