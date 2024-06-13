@@ -25,16 +25,17 @@
   <br>
   <br>
   
-## 기술 스택 💻
+## 기술 스택 🛠️
 - API : `네이버 API`, `구글 맵 API`, `포트 원 API`, `coolSMS`, `카카오 로그인 API`
 - Language : `JAVA(11)`,`JavaScript(1.5)`
 - Library & Framework : `Spring(5.2.7)`, `Spring Security(5.2.7)`, `Junit(4.12)`, `Servlet(3.1.0)`
 - Database : `MySQL(8.0.36)`
 - Target :  `Web Browser`
 - Tool : `SpringSource Tool Suite (STS) 3.9.18.RELEASE`
-  <br>
-  
-## 프로젝트 설계, 기술 구현
+  <br/>
+<br/>
+
+## 프로젝트 설계, 기술 구현 💻
 | **![슬라이드1](https://github.com/Leehyob/SpringProject/assets/157094625/e9b5d87e-2edf-499f-bec0-7b4b688533f3)** | **![슬라이드2](https://github.com/Leehyob/SpringProject/assets/157094625/5486ff60-5be7-42e0-b4ba-7cf18f269df8)** |
 | :------: | :-------: |
 | ![슬라이드3](https://github.com/Leehyob/SpringProject/assets/157094625/a8a75eb2-6243-4294-ac5a-e1aadff24660) | ![슬라이드4](https://github.com/Leehyob/SpringProject/assets/157094625/b5b0932a-5d10-4c96-943c-8422cc9d0acf) |
@@ -56,8 +57,16 @@
 | ![슬라이드35](https://github.com/Leehyob/SpringProject/assets/157094625/c9d7fe27-8ba4-4b78-9781-8bc753c2792d) | ![슬라이드36](https://github.com/Leehyob/SpringProject/assets/157094625/f5ee6589-89e3-4b30-bf3d-0cefc7057e51) |
 | ![슬라이드37](https://github.com/Leehyob/SpringProject/assets/157094625/c64b011a-de59-47c0-9be3-34be671e8b6e) | ![슬라이드38](https://github.com/Leehyob/SpringProject/assets/157094625/2425dce3-9ec4-4df7-aa54-10db539b5708) |
 | ![슬라이드39](https://github.com/Leehyob/SpringProject/assets/157094625/8fa6aa33-1cd2-47a6-84c8-fc2da5d4d959) | ![슬라이드40](https://github.com/Leehyob/SpringProject/assets/157094625/5537ba44-b5d0-46b8-b820-2e818f53fc73) | 
-| ![슬라이드41](https://github.com/Leehyob/SpringProject/assets/157094625/f09e02fc-6eaf-4f6a-8e05-5dfb5091e523) |
 
-## 핵심 기능
+
+## 핵심 기능 ✔️
+
+#### 일정 계획
+#### 일반 회원
+#### 유료 결제 회원
+#### 관리자
+- 
+
+
 ## 실행 화면
 ## 개선 사항
