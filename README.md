@@ -35,7 +35,7 @@
   <br>
   
 ## 프로젝트 설계, 기술 구현
-
+[여행플랜ppt .pdf](https://github.com/user-attachments/files/15812596/ppt.pdf)
 
 ## 핵심 기능
 ## 실행 화면
