@@ -35,10 +35,10 @@
   <br>
   
 ## 프로젝트 설계, 기술 구현
-| ![슬라이드1](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드2](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
-| ![슬라이드3](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드4](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
-| ![슬라이드5](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드6](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
-| ![슬라이드7](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드8](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
+| ![슬라이드1](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드2](https://github.com/Leehyob/SpringProject/assets/157094625/54c7cd2d-1211-4ebf-810b-42c959580db0) |
+| ![슬라이드3](https://github.com/Leehyob/SpringProject/assets/157094625/a8a75eb2-6243-4294-ac5a-e1aadff24660) | ![슬라이드4](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
+| ![슬라이드5](https://github.com/Leehyob/SpringProject/assets/157094625/09b05d86-db90-4586-b71d-4b26b99bec6b) | ![슬라이드6](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
+| ![슬라이드6](https://github.com/Leehyob/SpringProject/assets/157094625/d2f59554-53b9-40d0-bb71-d37975739a1d) | ![슬라이드8](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
 | ![슬라이드9](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드10](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
 | ![슬라이드11](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드12](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
 | ![슬라이드13](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) | ![슬라이드14](https://github.com/Leehyob/SpringProject/assets/157094625/84b64785-ab6d-47bd-8f64-652104282ae6) |
