@@ -58,7 +58,7 @@
 | ![슬라이드37](https://github.com/Leehyob/SpringProject/assets/157094625/c64b011a-de59-47c0-9be3-34be671e8b6e) | ![슬라이드38](https://github.com/Leehyob/SpringProject/assets/157094625/2425dce3-9ec4-4df7-aa54-10db539b5708) |
 | ![슬라이드39](https://github.com/Leehyob/SpringProject/assets/157094625/8fa6aa33-1cd2-47a6-84c8-fc2da5d4d959) | ![슬라이드40](https://github.com/Leehyob/SpringProject/assets/157094625/5537ba44-b5d0-46b8-b820-2e818f53fc73) | 
 
-
+<br/><br/>
 ## 핵심 기능 ✔️
 
 #### 일정 계획
