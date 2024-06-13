@@ -1,4 +1,5 @@
 <h1 align="center"><b>✈️스프링 여행 플랜 작성 웹 사이트🚢</b></h1>
+<br/>
 <img src="https://github.com/Leehyob/SpringProject/assets/157094625/cb71c84d-691a-44c6-ad14-49d0eb3dcd3e">
 
 
@@ -34,7 +35,7 @@
   <br>
   
 ## 프로젝트 설계, 기술 구현
-[여행플랜ppt  (2) (2).pptx](https://github.com/user-attachments/files/15812472/ppt.2.2.pptx)
+
 
 ## 핵심 기능
 ## 실행 화면
