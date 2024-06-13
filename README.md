@@ -6,17 +6,17 @@
 
 
 ## 목차 🚩
-- [개요](https://github.com/Leehyob/SpringProject.git/#-개요)
+- [개요](https://github.com/Leehyob/SpringProject/#-개요)
   
-- [기술 스택](https://github.com/Leehyob/SpringProject.git/#-기술-스택)
+- [기술 스택](https://github.com/Leehyob/SpringProject/#-기술-스택)
   
-- [프로젝트 설계, 기술 구현](https://github.com/Leehyob/SpringProject.git/#-프로젝트-설계,-기술-구현)
+- [프로젝트 설계, 기술 구현](https://github.com/Leehyob/SpringProject/#-프로젝트-설계,-기술-구현)
   
-- [핵심 기능](https://github.com/Leehyob/SpringProject.git/#-핵심-기능)
+- [핵심 기능](https://github.com/Leehyob/SpringProject/#-핵심-기능)
   
-- [실행 화면](https://github.com/Leehyob/SpringProject.git/#-실행-화면)
+- [실행 화면](https://github.com/Leehyob/SpringProject/#-실행-화면)
   
-- [개선 사항](https://github.com/Leehyob/SpringProject.git/#-개선-사항)
+- [개선 사항](https://github.com/Leehyob/SpringProject/#-개선-사항)
   
 <br><br>
   
